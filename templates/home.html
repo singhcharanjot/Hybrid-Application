@@ -1,0 +1,86 @@
+<ion-view view-title="Motivational Quotes">
+  <ion-content class="padding">
+<div class="list card" ng-repeat="x in imagePath | orderBy:'key'">
+
+            <div class="item item-avatar">
+
+                <img data-ng-src="{{x.path}}">
+
+                <h2></h2>
+
+                <span style="white-space: normal;"><b>" {{x.text}} "</b></span>
+
+            </div>
+
+            <div class="item item-body">
+
+
+                <img class="full-image" data-ng-src="{{x.path}}">
+
+                <!-- <p>
+
+                    <a href="#" class="subdued">1 Like</a>
+
+                    <a href="#" class="subdued">5 Comments</a>
+
+                </p> -->
+
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left" style="background-color:#fff !important;">
+
+                <a class="tab-item" href="#">
+                    <!-- <i class="icon ion-arrow-down-a" style="color:#fff;margin-left:50%;font-size:25px;"></i> -->
+                    <i class="icon ion-arrow-down-a"></i> Save
+
+                </a>
+
+                <!-- <a class="tab-item" href="#">
+
+                    <i class="icon ion-chatbox"></i> Comment
+
+                </a> -->
+
+                <a class="tab-item" href="#">
+
+                    <i class="icon ion-share"></i> Share
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div class="row" ng-repeat="x in imagePath" style="width:150px;float: left;">
+    <div class="col">
+    <img data-ng-src="{{x.path}}" width="100px" height="100px"/> <br>
+    </div>
+</div>
+  -->
+
+
+
+
+
+
+<!--     <img class='item'
+         collection-repeat='x in imagePath'
+         item-width='125px'
+         item-height='125px'
+         ng-click='show(x.id)'
+         ng-src='{{ x.path }}'
+         width='100%'>-->
+  </ion-content>
+</ion-view>
