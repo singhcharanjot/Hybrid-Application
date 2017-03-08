@@ -62,3 +62,39 @@ cursor: pointer;
 {
   color:#fff !important;
 }
+.icon_custom
+{
+  font-size:15px;
+padding:0px;
+}
+.button_custom
+{
+  border-color: transparent;
+background-color: #f8f8f8;
+color: #444;
+ position: relative;
+display: inline-block;
+margin: 0;
+ padding: 0 12px;
+min-width: 40px;
+min-height: 40px;
+border-width: 1px;
+border-style: solid;
+border-radius: 4px;
+vertical-align: top;
+text-align: center;
+text-overflow: ellipsis;
+ font-size: 16px;
+ line-height: 42px;
+cursor: pointer;
+background-color: #000;
+}
+
+.black_color
+{
+  position: absolute;
+  left: 45%;
+  top:10%;
+  stroke:#444;
+
+}
