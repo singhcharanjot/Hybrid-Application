@@ -1,5 +1,8 @@
 <ion-view view-title="Motivational Quotes">
   <ion-content class="padding">
+    <ion-refresher on-refresh="doRefresh()">
+
+    </ion-refresher>
 <div class="list card" ng-repeat="x in imagePath | orderBy:'key'">
 
             <div class="item item-avatar">
@@ -15,7 +18,7 @@
             <div class="item item-body">
 
 
-                <img class="full-image" data-ng-src="{{x.path}}">
+                <img class="full-image fullHeight" data-ng-src="{{x.path}}">
 
                 <!-- <p>
 
