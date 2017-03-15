@@ -24,6 +24,37 @@ $scope.loader=true;
     console.log('make a generic no error function');
   });
 
+  $scope.doRefresh = function() {
+    $http.get("https://motivationapp-51320.firebaseio.com/myDatabse.json")
+      .then(function(response) {
+        $scope.loader=false;
+        if(response.data.pathDetails)
+        {
+          $scope.myWelcome = response;
+      $scope.imagePath=($scope.myWelcome.data.pathDetails).reverse();
+
+        //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+      }
+      else {
+        console.log('make a generic no datafound function');
+      }
+
+          // alert($scope.myWelcome.data.pathDetails.length)
+
+      },function errorHandler(response)
+    {
+      console.log('make a generic no error function');
+    });
+  }
+
+  //  PersonService.GetNewUser().then(function(items){
+  //    $scope.items = items.concat($scope.items);
+   //
+  //    //Stop the ion-refresher from spinning
+  //    $scope.$broadcast('scroll.refreshComplete');
+  //  });
+
   // firebase.database().ref('/myDatabse/pathDetails').once('value').then(function(snapshot) {
   //
   //   $scope.imagePath=snapshot.val();
@@ -110,30 +141,29 @@ $scope.loader=true;
 //  $scope.remove = function(chat) {
 //    Chats.remove(chat);
 //  };
+$scope.doRefresh = function() {
+  $http.get("https://motivationapp-51320.firebaseio.com/myDatabse.json")
+    .then(function(response) {
+      $scope.loader=false;
+      if(response.data.pathDetails)
+      {
+        $scope.myWelcome = response;
+    $scope.imagePath=($scope.myWelcome.data.pathDetails).reverse();
 
-  $scope.downloadImage = function() {
-    var url = "http://ngcordova.com/img/ngcordova-logo.png",
-        filename = url.split("/").pop(),
-        targetPath = cordova.file.externalRootDirectory + filename,
-        options = {},
-        trustHosts = true;
+      //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    }
+    else {
+      console.log('make a generic no datafound function');
+    }
 
-alert('hi')
+        // alert($scope.myWelcome.data.pathDetails.length)
 
-    $cordovaFileTransfer.download(url, targetPath, options, trustHosts)
-      .then(
-        function(result) {
-          alert('Download success');
-          refreshMedia.refresh(targetPath);
-        },
-        function(err) {
-          alert('Error: ' + JSON.stringify(err));
-        },
-        function(progress) {
-          // progressing download...
-        }
-      );
-  };
+    },function errorHandler(response)
+  {
+    console.log('make a generic no error function');
+  });
+}
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
